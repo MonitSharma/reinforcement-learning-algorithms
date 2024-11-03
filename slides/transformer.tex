@@ -1,0 +1,137 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+\usecolortheme{default}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+
+\title{You got me looking for Attention!}
+\author{Monit Sharma}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \tableofcontents
+\end{frame}
+
+% Slide for Introduction to Logistic Regression
+\section{Logistic Regression}
+\begin{frame}{Introduction to Logistic Regression}
+    \begin{itemize}
+        \item Binary classification model, outputs probability between 0 and 1.
+        \item Uses a linear combination of inputs with a sigmoid activation function:
+        $$
+        \sigma(z) = \frac{1}{1 + e^{-z}}
+        $$
+        \item Example: $\sigma(0.5) \approx 0.622$, meaning a 62.2\% probability for the positive class.
+    \end{itemize}
+\end{frame}
+
+% Slide for Loss and Cost Functions and Gradient Descent
+\begin{frame}{Loss, Cost, and Optimization}
+    \begin{itemize}
+        \item \textbf{Loss Function}: Measures error for each sample.
+        $$
+        \text{Loss} = - \left( y \cdot \log(\hat{y}) + (1 - y) \cdot \log(1 - \hat{y}) \right)
+        $$
+        \item \textbf{Cost Function}: Average of all losses over the dataset.
+        $$
+        \text{Cost} = \frac{1}{m} \sum_{i=1}^{m} \text{Loss}(y_i, \hat{y}_i)
+        $$
+        \item \textbf{Gradient Descent}: Minimizes cost by updating weights and bias:
+        $$
+        w := w - \alpha \frac{\partial J}{\partial w}, \quad b := b - \alpha \frac{\partial J}{\partial b}
+        $$
+    \end{itemize}
+\end{frame}
+
+% Slide for Artificial Neural Networks (ANN)
+\section{Artificial Neural Networks (ANN)}
+\begin{frame}{What is an ANN?}
+    \begin{itemize}
+        \item ANN extends logistic regression by adding hidden layers.
+        \item Each hidden layer increases model capacity, learning complex patterns.
+        \item Layers:
+            \begin{itemize}
+                \item \textbf{Input Layer}: Receives raw data.
+                \item \textbf{Hidden Layers}: Learn intermediate representations.
+                \item \textbf{Output Layer}: Produces final predictions.
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+% Slide for Activation Functions
+\begin{frame}{Activation Functions}
+    \begin{itemize}
+        \item Introduce non-linearity to learn complex relationships.
+        \item \textbf{Sigmoid}:
+            $$
+            \sigma(z) = \frac{1}{1 + e^{-z}}
+            $$
+        \item \textbf{Tanh}:
+            $$
+            \text{tanh}(z) = \frac{e^z - e^{-z}}{e^z + e^{-z}}
+            $$
+        \item Tanh is often preferred in hidden layers for centering outputs.
+    \end{itemize}
+\end{frame}
+
+% Slide for Building a 2-Layer Neural Network
+\section{Building a 2-Layer Neural Network}
+\begin{frame}{2-Layer Neural Network Structure}
+    \begin{itemize}
+        \item Simple neural network with one hidden layer.
+        \item Forward propagation:
+            \begin{itemize}
+                \item Hidden layer:
+                $$
+                z^{[1]} = W^{[1]} x + b^{[1]}, \quad a^{[1]} = \text{tanh}(z^{[1]})
+                $$
+                \item Output layer:
+                $$
+                z^{[2]} = W^{[2]} a^{[1]} + b^{[2]}, \quad \hat{y} = \sigma(z^{[2]})
+                $$
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+% Slide for Loss, Cost, and Backward Propagation in Neural Networks
+\begin{frame}{Loss, Cost, and Backward Propagation}
+    \begin{itemize}
+        \item \textbf{Loss Function}: Same as logistic regression.
+        $$
+        \text{Loss} = - \left( y \cdot \log(\hat{y}) + (1 - y) \cdot \log(1 - \hat{y}) \right)
+        $$
+        \item \textbf{Cost Function}: Average loss over all samples.
+        \item \textbf{Backward Propagation}: Calculates gradients of weights and biases to minimize cost.
+    \end{itemize}
+\end{frame}
+
+% Slide for Parameter Updates and Prediction
+\begin{frame}{Parameter Updates and Prediction}
+    \begin{itemize}
+        \item \textbf{Parameter Update}: Uses gradient descent to adjust weights and biases:
+        $$
+        W := W - \alpha \frac{\partial J}{\partial W}, \quad b := b - \alpha \frac{\partial J}{\partial b}
+        $$
+        \item \textbf{Prediction}: Perform forward propagation with trained parameters.
+        \item Classification is done by applying a threshold to $\hat{y}$.
+    \end{itemize}
+\end{frame}
+
+% Slide for Conclusion
+\section{Conclusion}
+\begin{frame}{Conclusion}
+    \begin{itemize}
+        \item Logistic regression: Binary classification using sigmoid activation.
+        \item ANN: Extends logistic regression by adding hidden layers for complex patterns.
+        \item Key processes: Forward propagation, backward propagation, and parameter updates.
+        \item Optimization via gradient descent with learning rate $\alpha$.
+    \end{itemize}
+\end{frame}
+
+\end{document}
