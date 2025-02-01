@@ -1,4 +1,0 @@
-\beamer@sectionintoc {1}{Logistic Regression}{3}{0}{1}
-\beamer@sectionintoc {2}{Artificial Neural Networks (ANN)}{5}{0}{2}
-\beamer@sectionintoc {3}{Building a 2-Layer Neural Network}{7}{0}{3}
-\beamer@sectionintoc {4}{Conclusion}{10}{0}{4}

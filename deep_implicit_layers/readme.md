@@ -1,1 +1,0 @@
-This material is from [Implicit Layers Tutorial](https://implicit-layers-tutorial.org/introduction/)
